@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: maven-app-prod
+  name: maven-app-prod
+  namespace: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: maven-app-prod
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: maven-app-prod
+    spec:
+      containers:
+      - image: chehine/maven-project-prod:1
+        name: maven-project
+        imagePullPolicy: Always
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: maven-app-prod
+    app.kubernetes.io/instance: maven-project-prod
+  name: svc-maven-app-prod
+  namespace: prod
+spec:
+  ports:
+  - nodePort: 32222
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: maven-app-prod
+  type: NodePort
