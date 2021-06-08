@@ -4,7 +4,6 @@ metadata:
   labels:
     app: maven-app
   name: maven-app
-  namespace: ENV
 spec:
   replicas: 1
   selector:

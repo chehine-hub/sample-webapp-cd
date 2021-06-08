@@ -4,7 +4,6 @@ metadata:
   labels:
     app: maven-app
   name: svc-maven-app
-  namespace: ENV
 spec:
   ports:
   - nodePort: 31111
