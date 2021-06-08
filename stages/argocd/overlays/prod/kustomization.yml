@@ -16,3 +16,6 @@ namespace: prod
 replicas:
 - name: prod-maven-app
   count: 3
+  
+patchesStrategicMerge:
+- nodeport.yml

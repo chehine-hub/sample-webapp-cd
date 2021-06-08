@@ -16,3 +16,6 @@ namespace: dev
 replicas:
 - name: dev-maven-app
   count: 1
+  
+patchesStrategicMerge:
+- nodeport.yml

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: maven-app
+  name: svc-maven-app
+spec:
+  ports:
+  - nodePort: 32222
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: maven-app
+  type: NodePort
