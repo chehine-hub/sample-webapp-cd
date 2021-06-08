@@ -1,0 +1,7 @@
+version: '3'
+services:
+  maven:
+    image: "$DOCKER_HUB_ACCOUNT/maven-project-$ENV:$BUILD_TAG"
+    container_name: maven-app-$ENV
+    ports:
+      - "8080:8080"
