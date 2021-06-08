@@ -1,0 +1,18 @@
+bases:
+  - ../../base
+
+namePrefix: dev-
+  
+commonLabels:
+  env: dev
+ 
+images:
+- name: IMAGE
+  newName: chehine/maven-project-dev
+  newTag: 0.0.1
+  
+namespace: dev
+
+replicas:
+- name: dev-maven-app
+  count: 1

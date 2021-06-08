@@ -1,0 +1,18 @@
+bases:
+  - ../../base
+
+namePrefix: prod-  
+
+commonLabels:
+  env: prod
+  
+images:
+- name: IMAGE
+  newName: chehine/maven-project-prod
+  newTag: 0.0.1
+  
+namespace: prod
+
+replicas:
+- name: prod-maven-app
+  count: 3
